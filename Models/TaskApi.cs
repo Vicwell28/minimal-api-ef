@@ -7,29 +7,29 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace minimal_api_ef.Models
 {
-    [Table("Task")]
+    // [Table("Task")]
     public class TaskApi
     {
-        [Key]
-        public Guid TaskApiId { get; set; }
+        // [Key]
+        public Guid TaskId { get; set; }
 
-        [ForeignKey("CategoryId")]
+        // [ForeignKey("CategoryId")]
         public Guid CategoryId { get; set; }
 
-        [Required]
-        [MaxLength(200)]
+        // [Required]
+        // [MaxLength(200)]
         public string Titulo { get; set; } = string.Empty;
 
         public string Description { get; set; } = string.Empty;
 
         public Priority Priority { get; set; }
 
-        [DataType(DataType.DateTime)]
+        // [DataType(DataType.DateTime)]
         public DateTime Create_at { get; set; }
 
         public virtual Category Catrgory { get; set; }
 
-        [NotMapped]
+        // [NotMapped]
         public string Resumen { get; set; } = string.Empty;
 
     }
