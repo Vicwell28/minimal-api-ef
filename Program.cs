@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<MinimalAPIEFContext>(cxt => cxt.UseInMemoryDatabase("TasksDB"));
+// builder.Services.AddDbContext<MinimalAPIEFContext>(cxt => cxt.UseInMemoryDatabase("TasksDB"));
+
+builder.Services.AddNpgsql<MinimalAPIEFContext>(builder.Configuration.GetConnectionString("cnxTask"));
 
 var app = builder.Build();
 
