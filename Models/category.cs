@@ -22,6 +22,8 @@ namespace minimal_api_ef.Models
 
         // [DataType(DataType.DateTime)]
         public DateTime Create_at { get; set; }
+        public int Peso { get; set; }
+
 
         public virtual ICollection<TaskApi> tasks { get; set; }
     }
